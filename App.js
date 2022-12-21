@@ -3,12 +3,12 @@ import { NavigationContainer } from '@react-navigation/native'; //navigation rou
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; //navigation router
 import { SafeAreaProvider } from 'react-native-safe-area-context'; //screen handler for safeviewprovider
 
-import Login from './Screens/Login/Login'
-import RegisterOne from './Screens/Register/RegisterOne'
-import RegisterTwo from './Screens/Register/RegisterTwo'
-import RegisterThree from './Screens/Register/RegisterThree'
-import RegisterFour from './Screens/Register/RegisterFour'
-import Home from './Screens/Home/Home'
+import Login from './src/Screens/Login/Login'
+import RegisterOne from './src/Screens/Register/RegisterOne'
+import RegisterTwo from './src/Screens/Register/RegisterTwo'
+import RegisterThree from './src/Screens/Register/RegisterThree'
+import RegisterFour from './src/Screens/Register/RegisterFour'
+import Home from './src/Screens/Home/Home'
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +19,7 @@ class App extends React.Component {
 
     return(
  <SafeAreaProvider>
-    <NavigationContainer intialRouteName={RegisterOne}>
+    <NavigationContainer intialRouteName={Login}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="RegisterOne" component={RegisterOne} />
