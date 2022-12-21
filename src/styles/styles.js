@@ -27,13 +27,15 @@ const styles =  StyleSheet.create({
     width: deviceWidth,
     height: deviceHeight,
     textinput: {
-        borderBottomWidth: 1,
+        borderBottomWidth: .7,
         width: (deviceWidth/1.5),
-        padding: '2%',
-        fontSize: ((deviceHeight/deviceWidth) * 8.5),
-        marginTop: (15 * 2),
-        marginBottom: 15,
-        borderRadius: 20 ,
+        paddingLeft: '3%',
+        paddingBottom: '1%',
+        paddingTop: '1%',
+        fontSize: ((deviceHeight/deviceWidth) * 9),
+        marginTop: (15 * 1.5),
+        marginBottom: (15 ),
+        borderRadius: 10 ,
         borderColor: 'black'
     },
     input: {
@@ -58,6 +60,20 @@ const styles =  StyleSheet.create({
             fontWeight: '500', 
             textTransform: 'capitalize',
           },
+          signuptitle:{
+            fontSize: ((deviceHeight/deviceWidth) *25), 
+            fontWeight: '500', 
+            textTransform: 'capitalize',
+            margin: "2%"
+          },
+          fineprint:{
+            fontSize: ((deviceHeight/deviceWidth) *6.25), 
+            fontWeight: '400', 
+            color: '#bfc1c2',
+            width: (deviceWidth/1.8),
+            marginTop:"2%",
+            marginBottom:"1%"
+          },
           loginbtn:{
             paddingBottom: '4%', 
             paddingTop: '4%', 
@@ -68,8 +84,24 @@ const styles =  StyleSheet.create({
             marginTop: '4%' ,
             marginBottom: '4%'
              },
+             signupbtn:{
+              paddingBottom: '3%', 
+              paddingTop: '3%', 
+              backgroundColor: '#83cc9a', 
+              alignItems:'center',
+              justifyContent:'center', 
+              width: (deviceWidth/1.25), 
+              marginTop: '5%' ,
+              
+               },
       loginbtntext:{
         fontSize: ((deviceHeight/deviceWidth) *10),
+        fontWeight:'600',
+        letterSpacing:1,
+        textTransform: 'uppercase'
+      },
+      signupbtntext:{
+        fontSize: ((deviceHeight/deviceWidth) *7),
         fontWeight:'600',
         letterSpacing:1,
         textTransform: 'uppercase'

@@ -15,15 +15,14 @@ export default class RegisterOne extends Component {
   
     return (
         <SafeAreaView style={styles.container}>
-         <Text style={styles.title}>Sign Up</Text>
-         
-        <TextInput placeholder='Use phone or email'style={styles.textinput}/>
-        <TextInput placeholder='Create a password'style={styles.textinput}></TextInput>
-      
-     <TouchableOpacity style={styles.loginbtn} onPress={()=>this.props.navigation.navigate('RegisterTwo')}>
-            <Text style={styles.loginbtntext}>Continue</Text>
+         <Text style={styles.signuptitle}>Sign Up</Text>
+         <TextInput placeholder='Password'style={styles.textinput}/>
+         <TextInput placeholder='Email'style={styles.textinput}/>
+         <Text style={styles.fineprint}>By pressing Sign Up & Accept you acknowledge you have read our privacy policy and agree to our Terms of Service.</Text>
+         <TouchableOpacity style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('RegisterTwo')}>
+            <Text style={styles.signupbtntext}>Sign Up & Accept</Text>
           </TouchableOpacity>
-        {/* <SafeAreaView style={{top:  deviceHeight/5}}><Text>Already have an account? <Text style={{fontWeight: '700'}} onPress={()=>this.props.navigation.navigate('Login')}>Log In</Text></Text></SafeAreaView>  */}
+        <SafeAreaView style={styles.footer}><Text>Already have an account? <Text style={{fontWeight: '700'}} onPress={()=>this.props.navigation.navigate('Login')}>Log In</Text></Text></SafeAreaView> 
         </SafeAreaView>
     
     )
