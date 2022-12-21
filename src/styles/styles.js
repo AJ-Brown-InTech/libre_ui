@@ -90,7 +90,7 @@ const styles =  StyleSheet.create({
               backgroundColor: '#83cc9a', 
               alignItems:'center',
               justifyContent:'center', 
-              width: (deviceWidth/1.25), 
+              width: (deviceWidth/1.5), 
               marginTop: '5%' ,
               
                },
@@ -105,6 +105,13 @@ const styles =  StyleSheet.create({
         fontWeight:'600',
         letterSpacing:1,
         textTransform: 'uppercase'
+      },
+      signupsubtext:{
+        fontSize: ((deviceHeight/deviceWidth) *7), 
+        fontWeight: '300', 
+        textAlign: 'center',
+        margin: "4%"
+
       },
       footer:{
         top:  deviceHeight/5,

@@ -14,13 +14,14 @@ export default class RegisterTwo extends Component {
     
     return (
 
-  <View style={styles.container}>
-    <Text style={styles.title}>Create a user name.</Text>
+  <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Create a username.</Text>
+      <Text style={styles.signupsubtext} >This is how others can connect with you on Libre.</Text>
       <TextInput type='text' placeholder='@Username' style={styles.textinput}></TextInput>
-    <TouchableOpacity  style={styles.loginbtn} onPress={()=>this.props.navigation.navigate('RegisterThree')}>
-      <Text style={styles.loginbtntext}>Continue</Text>
-    </TouchableOpacity>
-  </View>
+      <TouchableOpacity  style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('RegisterThree')}>
+      <Text style={styles.signupbtntext}>Next</Text>
+      </TouchableOpacity>
+  </SafeAreaView>
     
     )
   }

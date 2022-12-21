@@ -22,6 +22,7 @@ export default class RegisterOne extends Component {
          <TouchableOpacity style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('RegisterTwo')}>
             <Text style={styles.signupbtntext}>Sign Up & Accept</Text>
           </TouchableOpacity>
+          {console.log(this.props.navigation.navigate("Login"))}
         <SafeAreaView style={styles.footer}><Text>Already have an account? <Text style={{fontWeight: '700'}} onPress={()=>this.props.navigation.navigate('Login')}>Log In</Text></Text></SafeAreaView> 
         </SafeAreaView>
     
