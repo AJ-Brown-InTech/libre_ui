@@ -13,15 +13,14 @@ import Home from './src/Screens/Home/Home'
 const Stack = createNativeStackNavigator();
 
 class App extends React.Component {
- 
- 
+
   render (){
 
     return(
  <SafeAreaProvider>
     <NavigationContainer intialRouteName={Login}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Login" component={RegisterTwo} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="RegisterOne" component={RegisterOne} />
         <Stack.Screen name="RegisterTwo" component={RegisterTwo} />
         <Stack.Screen name="RegisterThree" component={RegisterThree} />

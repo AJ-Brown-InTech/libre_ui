@@ -27,7 +27,7 @@ setDate(newDate) {
               maximumDate={new Date(Date.now())}
               />
          <TouchableOpacity style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('Home')}>
-            <Text style={styles.signupbtntext}>Continue</Text>
+            <Text style={styles.signupbtntext}>Finish</Text>
           </TouchableOpacity>
           </View>
     

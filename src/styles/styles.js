@@ -14,6 +14,7 @@ const styles =  StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     margin:0,
     padding: 0,
+    backgroundColor: 'white'
     },
     width: deviceWidth,
     height: deviceHeight,
@@ -47,7 +48,7 @@ const styles =  StyleSheet.create({
             justifyContent: 'space-between',
           },
           title:{
-            fontSize: ((deviceHeight/deviceWidth) *12), 
+            fontSize: ((deviceHeight/deviceWidth) *16), 
             fontWeight: '500', 
             textTransform: 'capitalize',
             padding:'2%'

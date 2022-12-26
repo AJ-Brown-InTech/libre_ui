@@ -15,8 +15,7 @@ export default class RegisterTwo extends Component {
     return (
 
   <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Create a username.</Text>
-      <Text style={styles.signupsubtext} >This is how others can connect with you on Libre.</Text>
+      <Text style={styles.title}>Create a username</Text>
       <TextInput type='text' placeholder='@Username' style={styles.textinput}></TextInput>
       <TouchableOpacity  style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('RegisterThree')}>
       <Text style={styles.signupbtntext}>Next</Text>
