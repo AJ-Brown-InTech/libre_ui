@@ -26,8 +26,8 @@ setDate(newDate) {
               onDateChange={(date)=> this.setDate(date)}
               maximumDate={new Date(Date.now())}
               />
-         <TouchableOpacity style={styles.loginbtn} onPress={()=>this.props.navigation.navigate('RegisterFour')}>
-            <Text style={styles.loginbtntext}>Continue</Text>
+         <TouchableOpacity style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('Home')}>
+            <Text style={styles.signupbtntext}>Continue</Text>
           </TouchableOpacity>
           </View>
     
