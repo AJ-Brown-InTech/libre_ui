@@ -26,6 +26,11 @@ let dummydata = {
     return(
              <SafeAreaView style={{flex:1}}>
               <ScrollView showsVerticalScrollIndicator={true}>
+              <View style={local.titleBar}>
+                <TouchableOpacity>
+                    <MaterialCommunityIcons name="settings-helper" size={27} color="#52575D"></MaterialCommunityIcons>
+                </TouchableOpacity>
+                </View>
                 <View style={{alignSelf: 'center'}}>
                   <View style={{alignItems:'center'}}>
                   {/* Profile Picture */}
@@ -38,11 +43,11 @@ let dummydata = {
                     <Text style={{color: '#AEB5BC', marginTop: 3,fontSize: 20 }}>@therealramos</Text>
                   </View>
                   </View>
+                  {/* Rating */}
                   <View style ={{flexDirection: 'row', alignSelf: 'center', marginTop:18}}>
                   <Text style={[local.text, local.subText]}>rating:</Text>
-                        <Text style={[local.text, { fontSize: 50 }]}>4.5</Text>
-                        
-                  
+                        <Text style={[local.text, { fontSize: 50 }]}>4.2</Text>
+                        <MaterialCommunityIcons name="star" size={20} color="#52575D"></MaterialCommunityIcons>
                   </View>
                   {/* Profile Stats */}
                   <View style={local.statsContainer}>
@@ -65,7 +70,9 @@ let dummydata = {
                       <Text style={{border: 1,borderWidth: 1, borderRadius:5, fontWeight: '400', borderColor:"#DFD8C8", padding: '2%', paddingLeft: '7%' ,paddingRight: '7%'  }}>Edit Profile</Text>
                     </TouchableOpacity>
                   </View>
-                 
+                 {/* border */}
+
+                 <View style={{border: 1,borderWidth: 0.5,marginTop:25, borderColor:"#DFD8C8"}}></View>
               
           
                 </View>
@@ -98,4 +105,21 @@ const local = StyleSheet.create({
     fontFamily: "HelveticaNeue",
     color: "#52575D"
   },
+  titleBar: {
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    marginTop: 24,
+    marginHorizontal: 16
+},
+active: {
+  backgroundColor: "#34FFB9",
+  position: "absolute",
+  bottom: 28,
+  left: 10,
+  padding: 4,
+  height: 20,
+  width: 20,
+  borderRadius: 10
+},
+
 })
