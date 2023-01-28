@@ -37,36 +37,16 @@ const styles =  StyleSheet.create({
       marginTop: (15 * 2),
       marginBottom: 15,
   },
-    forgot:{
-        fontSize: ((deviceHeight/deviceWidth) * 7),
-        paddingTop: '2%',
-       margin:'2%'
-    },
-        image: {
-            width: deviceWidth,
-            height: deviceHeight,
-            justifyContent: 'space-between',
-          },
+
+       
           title:{
             fontSize: ((deviceHeight/deviceWidth) *16), 
             fontWeight: '500', 
             textTransform: 'capitalize',
             padding:'2%'
           },
-          signuptitle:{
-            fontSize: ((deviceHeight/deviceWidth) *25), 
-            fontWeight: '500', 
-            textTransform: 'capitalize',
-            margin: "2%"
-          },
-          fineprint:{
-            fontSize: ((deviceHeight/deviceWidth) *6.25), 
-            fontWeight: '400', 
-            color: '#bfc1c2',
-            width: (deviceWidth/1.8),
-            marginTop:"2%",
-            marginBottom:"1%"
-          },
+       
+
           loginbtn:{
             paddingBottom: '4%', 
             paddingTop: '4%', 
@@ -110,82 +90,10 @@ const styles =  StyleSheet.create({
       footertxt:{
         fontSize: ((deviceHeight/deviceWidth) *7),
       },
-      profilectn:{
-        backgroundColor: '#83cc9a',
-        alignItems:'center',
-        borderColor: 'black',
-        width: deviceWidth,
-        height: (deviceHeight * .475),
-        
-      },
-      profile:{
-        height: (deviceHeight/8),
-        width: (deviceWidth/4),
-        borderRadius: 50,
-        margin: '1.5%',
-        top: '12%'
-       
-      },
-      profilename:{
-        fontSize: ((deviceHeight/deviceWidth) *12) ,
-         fontWeight: '700',
-         top: '12%',
-         color: '#343434'
-         
-      },
-      profileusername:{
-        fontSize: ((deviceHeight/deviceWidth) *7) ,
-        fontWeight: '500',
-        top: '12%',
-        color: '#414a4c',
-        margin: '1%'
-      },
-      profilecontainer: {
-        flex: 2,
-        alignItems:'center',
-        justifyContent:'center',
-        fontFamily: 'Helvetica Neue',
-        margin:0,
-        padding: 0,
-        },
-        stats:{
-          flexDirection: 'row',
-          top: '12%',
-        },
-        statctn:{
-          flexDirection: 'row',
+        screen:{
+          flex: 1, 
           alignItems: 'center',
-          color: '#414a4c',
-          margin: '2%',
-        },
-        profilenum:{
-          color: '#343434', fontSize: ((deviceHeight/deviceWidth) *7), fontWeight: '700'
-        },
-        profilebio:{
-          fontSize: ((deviceHeight/deviceWidth) *6.5) ,
-          top: '12%',
-          margin: '1.5%',
-          fontWeight: '400',
-          textAlign: 'center',
-          color: '#414a4c',
-        },
-        profileeditbtn:{
-          top: '12%',
-          color: '#414a4c',
-          backgroundColor: '#f4f0ec',
-          width: (deviceWidth* .75),
-          textAlign: 'center',
-          borderRadius: 5,
-          borderColor: 'black',
-          margin: '1%'
-        },
-        profileeditbtntext:{
-          fontSize: ((deviceHeight/deviceWidth) *6),
-          letterSpacing: 1,
-          textTransform: 'capitalize',
-          textAlign: 'center',
-          padding: '1.5%',
-          fontWeight: '500',
+          justifyContent: 'center',
         }
 
 })      

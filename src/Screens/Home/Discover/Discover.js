@@ -18,11 +18,7 @@ function MyTabs() {
 class Discover extends Component {
 render(){
     return(
-        <View style={{
-            flex: 1, 
-            alignItems: 'center',
-            justifyContent: 'center', 
-        }}>
+        <View style={styles.screen}>
             <Text >Discover Page</Text>
   
            </View>

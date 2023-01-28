@@ -19,7 +19,7 @@ class Feed extends Component {
 render(){
     return(
         <View style={styles.screen}>
-            <Text >Feed Page</Text>
+            <Text >Post Page</Text>
   
            </View>
            
