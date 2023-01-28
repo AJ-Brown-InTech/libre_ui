@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 class Home extends Component {
   
 render(){
-  const screenOptions = {
+  const screenOptions = { //this is styleing specifically for the tab bar
     unmountOnBlur: false,
     headerShown: false,
     tabBarStyle:{
