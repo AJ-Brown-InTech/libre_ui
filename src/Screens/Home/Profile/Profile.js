@@ -62,7 +62,7 @@ let dummydata = {
                   {/* Edit Profile */}
                   <View style ={{flexDirection: 'row', alignSelf: 'center', marginTop:25}}>
                     <TouchableOpacity>
-                      <Text style={{border: 1,borderWidth: 1, borderRadius:5, fontWeight: '400', borderColor:"#DFD8C8", padding: '2%' }}>Edit Profile</Text>
+                      <Text style={{border: 1,borderWidth: 1, borderRadius:5, fontWeight: '400', borderColor:"#DFD8C8", padding: '2%', paddingLeft: '7%' ,paddingRight: '7%'  }}>Edit Profile</Text>
                     </TouchableOpacity>
                   </View>
                  
