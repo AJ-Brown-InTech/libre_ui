@@ -9,17 +9,25 @@ render(){
     return(
         <SafeAreaView style={styles.screen}>
           <ScrollView showsVerticalScrollIndicator='true'>
+            {/* Discover page text + searchbar */}
             <View style={{flex: 1,}}>
-              <Text style={{fontWeight:'500', fontSize: 80, letterSpacing: 2}}>Discover</Text>
-              <View style={{flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}>
-              <TextInput placeholder='Search' style={{border: 1, borderWidth:2, borderColor:"#DFD8C8", padding: '2%', borderRadius:50, width: (styles.width/1.5), flex:1, backgroundColor:'#dcdcdc'}}>
-                <MaterialCommunityIcons name="magnify" size={27} color={"#52575D"}></MaterialCommunityIcons>
-              </TextInput>
-              <TouchableOpacity >
-                <Text style={{border: 1, borderWidth:0, padding:'2%', fontSize: 17, color:"#52575D"}}>Cancel</Text>
-              </TouchableOpacity>
+              <Text style={{fontWeight:'500', fontSize: 80, letterSpacing: 2}}>Find</Text>
+              {/* Searchbar */}
+              <View style={{alignItems:'center', justifyContent:'center'}}>
+                <View style={{flexDirection: 'row', border:1, borderWidth:1, borderRadius:50, width: (styles.width * .90), padding:'1%'}}>
+                  <MaterialCommunityIcons name='magnify' size={27} color='#989898'></MaterialCommunityIcons>
+                  <TextInput placeholder='Search' color='#989898' style={{fontWeight:'500'}}></TextInput>
+                </View>
               </View>
             </View>
+           
+            {/* <View style={{flex:1, marginTop:30}}>
+              <View style={{flexDirection:'row'}}>
+                <TouchableOpacity>
+                  <Text style={{fontSize: 30, fontWeight:'500', letterSpacing:1}}>#Trending</Text>
+                </TouchableOpacity>
+              </View>
+            </View> */}
           </ScrollView>
         </SafeAreaView>
            
