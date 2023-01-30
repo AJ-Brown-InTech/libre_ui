@@ -1,7 +1,6 @@
 import {Component} from 'react'
 import {Text, SafeAreaView, ScrollView, View, Image, StyleSheet, TouchableOpacity} from 'react-native'
 import styles from '../../../styles/styles'
-
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -24,7 +23,7 @@ let dummydata = {
 }
 
     return(
-             <SafeAreaView style={{flex:1}}>
+             <SafeAreaView style={styles.screen}>
               <ScrollView showsVerticalScrollIndicator={true}>
               <View style={local.titleBar}>
                 <TouchableOpacity>
@@ -71,9 +70,8 @@ let dummydata = {
                     </TouchableOpacity>
                   </View>
                  {/* border */}
-
                  <View style={{border: 1,borderWidth: 0.5,marginTop:25, borderColor:"#DFD8C8"}}></View>
-              
+              {/* Post */}
           
                 </View>
              
