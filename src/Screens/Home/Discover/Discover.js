@@ -10,10 +10,10 @@ render(){
         <SafeAreaView style={styles.screen}>
           <ScrollView showsVerticalScrollIndicator='true'>
             {/* Discover page text + searchbar */}
-            <View style={{flex: 1,}}>
+            <View style={{flex: 1, border:1, borderBottomWidth:1, borderColor:'#989898'}}>
               <Text style={{fontWeight:'500', fontSize: 80, letterSpacing: 2}}>Find</Text>
               {/* Searchbar */}
-              <View style={{alignItems:'center', justifyContent:'center'}}>
+              <View style={{alignItems:'center', justifyContent:'center', marginBottom:'6%'}}>
                 <View style={{flexDirection: 'row', border:1, borderWidth:1, borderRadius:50, width: (styles.width * .90), padding:'1%'}}>
                   <MaterialCommunityIcons name='magnify' size={27} color='#989898'></MaterialCommunityIcons>
                   <TextInput placeholder='Search' color='#989898' style={{fontWeight:'500'}}></TextInput>
