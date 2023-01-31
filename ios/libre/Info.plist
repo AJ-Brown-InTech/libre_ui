@@ -54,6 +54,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIAppFonts</key>
+	<!-- Icons -->
 <array>
   <string>AntDesign.ttf</string>
   <string>Entypo.ttf</string>
@@ -71,5 +72,22 @@
   <string>Octicons.ttf</string>
   <string>Zocial.ttf</string>
 </array>
+<!-- Camera -->
+<!-- Required with iOS 10 and higher -->
+<key>NSCameraUsageDescription</key>
+<string>Libre needs access to your camera.</string>
+
+<!-- Required with iOS 11 and higher: include this only if you are planning to use the camera roll -->
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>Libre needs access to your photo library.</string>
+
+<!-- Include this only if you are planning to use the camera roll -->
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Pick a photo for Libre.</string>
+
+<!-- Include this only if you are planning to use the microphone for video recording -->
+<key>NSMicrophoneUsageDescription</key>
+<string>Libre needs access to your microphone.</string>
+
 </dict>
 </plist>
