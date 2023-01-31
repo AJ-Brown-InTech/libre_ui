@@ -18,9 +18,10 @@ setDate(newDate) {
 
     return (
           <View style={styles.container}>
-            <Text style={styles.title}>Select your birthday.</Text>
+            <Text style={{fontSize: ((styles.height/styles.width) *10), textTransform: 'uppercase', fontWeight:'500', padding:'2%'}}>Select your birthday</Text>
             <DatePicker 
-              style={styles.textinput}
+            textColor='black'
+            
               mode='date'
               date={this.state.date}
               onDateChange={(date)=> this.setDate(date)}

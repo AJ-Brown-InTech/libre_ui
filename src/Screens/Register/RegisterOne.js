@@ -12,11 +12,18 @@ export default class RegisterOne extends Component {
          <Text style={styles.title}>Sign Up</Text>
          <TextInput placeholder='Password'style={styles.textinput} placeholderTextColor='darkgrey'/>
          <TextInput placeholder='Email'style={styles.textinput} placeholderTextColor='darkgrey'/>
-         <Text style={styles.fineprint}>By pressing Sign Up & Accept you acknowledge you have read our privacy policy and agree to our Terms of Service.</Text>
+      
+        
          <TouchableOpacity style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('RegisterTwo')}>
-            <Text style={styles.signupbtntext}>Sign Up & Accept</Text>
+            <Text style={styles.signupbtntext}>Continue</Text>
           </TouchableOpacity>
-        <SafeAreaView style={styles.footer}><Text>Already have an account? <Text style={{fontWeight: '700'}} onPress={()=>this.props.navigation.navigate('Login')}>Log In</Text></Text></SafeAreaView> 
+          <Text style={styles.fineprint}>By Signing up you acknowledge you have read our privacy policy and agree to our Terms of Service.</Text>
+        
+           <View style={styles.footer}>
+                <Text style={styles.footertxt}>Already have an account? 
+                  <Text style={{fontWeight: '600'}}  onPress={()=> this.props.navigation.navigate('Login')}> Login</Text>
+                </Text>
+              </View> 
         </SafeAreaView>
     
     )

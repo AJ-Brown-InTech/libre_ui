@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const PendingView = () => (
   <View
@@ -18,26 +19,27 @@ const PendingView = () => (
 export default class ExampleApp extends PureComponent {
   render() {
     return (
-      <View style={styles.container}>
         <RNCamera
-          style={styles.preview}
+          style={[styles.preview, StyleSheet.absoluteFill]}
           type={RNCamera.Constants.Type.front}
           flashMode={RNCamera.Constants.FlashMode.auto}
         >
-          {({ camera, status, recordAudioPermissionStatus }) => {
+          {({ camera, status, recordAudioPermissionStatus, }) => {
             console.log(status)
-            console.log(camera)
+            //console.log(camera)
             //if (status !== 'READY') return <PendingView />;
             return (
               <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
-                <TouchableOpacity onPress={() => this.takePicture(camera)} style={styles.capture}>
+                <TouchableOpacity onPress={() => this.takePicture(camera)}  style={styles.capture}>
                   <Text style={{ fontSize: 14 }}> SNAP </Text>
+                </TouchableOpacity>
+                <TouchableOpacity  style={styles.capture}>
+                  <MaterialCommunityIcons name="camera-flip" size={27}></MaterialCommunityIcons>
                 </TouchableOpacity>
               </View>
             );
           }}
         </RNCamera>
-      </View>
     );
   }
 
