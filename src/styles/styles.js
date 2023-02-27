@@ -33,7 +33,7 @@ const styles =  StyleSheet.create({
     height: deviceHeight,
     textinput: {
         borderBottomWidth: 1,
-        width: (deviceWidth/1.4),
+        width: (deviceWidth/1.5),
         paddingLeft: '3%',
         paddingBottom: '3%',
         paddingTop: '2%',
@@ -42,6 +42,18 @@ const styles =  StyleSheet.create({
         borderRadius: 10 ,
         borderColor: 'black'
     },
+    codeinput: {
+      borderBottomWidth: 1,
+      width: (deviceWidth/3),
+      paddingLeft: '3%',
+      paddingBottom: '3%',
+      paddingTop: '2%',
+      fontSize: ((deviceHeight/deviceWidth) * 9),
+      margin:'5%',
+      borderRadius: 10 ,
+      borderColor: 'black',
+      
+  },
   //   input: {
   //     borderBottomWidth: 1,
   //     width: (deviceWidth/1.5),
