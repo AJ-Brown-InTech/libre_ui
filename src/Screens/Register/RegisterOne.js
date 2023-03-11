@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Linking } from "react-native";
 import styles from '../../styles/styles'
+import { Query, QueryCache } from '@tanstack/react-query';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import qs from 'qs';
 
@@ -10,43 +11,37 @@ export default class RegisterOne extends Component {
   this.state = {
     routeName: this.props.route.name,
     password: '',
+    passwordInput:false,
     email: '',
+    emailInput:false,
     error: '',
     verified: false,
     emailCode: 0
   }
 }
 
-//   handleChange = (event) => {
-//     console.log(event)
-//     this.setState({ email: event });
-    
-//  };
-
  validate = (text) => {
   let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
   if (reg.test(text) === false) {
     this.setState({error: 'Email is invalid'})
-    this.setState({ email: text.toLowerCase() })
-    return false;
+    this.setState({ email: text.toLowerCase(), emailInput: false })
+    return 
   } else {
     this.setState({error: ''})
-    this.setState({ email: text.toLowerCase() })
+    this.setState({ email: text.toLowerCase(), emailInput: true })
     console.log("Email is Correct");
     return
   }
 }
 
 handleChange = event => {
-   if (event < 6){
-     this.setState({error: 'Password length is too short'})
-     this.setState({ password: event.toLowerCase() })
+   if (event.length < 6){
+     this.setState({ password: event, passwordInput:false, error: 'Password length is too short' })
      console.log("Password length is too short");
      return
    } else {
-    this.setState({error: ''})
-    this.setState({ password: event.toLowerCase() })
-    console.log("Password is valid");
+    this.setState({ password: event, passwordInput: true, error: '' })
+     console.log("Password is valid");
     return
   }
 }
@@ -80,18 +75,54 @@ async  sendEmail(to, subject, body, options = {}) {
   return Linking.openURL(url);
 }
 
+navigationHandler(){
+  if(this.state.email && this.state.password != null && this.state.error.length <= 0){
+    this.props.navigation.navigate('RegisterTwo')
+    return
+  } else{
+    this.setState({error: 'Error creating account, please try again.'})
+    return
+  }
+}
+
+verifedHandler(){
+  if (this.state.emailInput == true && this.state.passwordInput == true ){
+   this.props.navigation.navigate('RegisterTwo')
+  } else{
+    this.setState({error: 'Error creating an account, try again'})
+  }
+}
+
+
 
 render() {
 
  console.log(this.state)
-  //'{"username": "thisisatest", "email": "ajalantbrown@yahoo.com", "password": "password1234", "dob":"01/01/2021"}'
     return (
         <SafeAreaView style={styles.container}>
          <Text style={styles.title}>Sign Up</Text>
-         <TextInput placeholder='Email' style={styles.textinput} placeholderTextColor='darkgrey'  name='email' value={this.state.email} onChangeText={event => this.validate(event)} />
-         <TextInput placeholder='Password' style={styles.textinput} placeholderTextColor='darkgrey' name='password' value={this.state.password} onChangeText={event => this.handleChange(event)} type="password"  />
-         <View style={{'flexDirection': 'row', 'borderRadius':10,'borderWidth':0.5,'overflow': 'hidden',}}> 
-            <TouchableOpacity onPress={()=>this.sendEmail(
+         <TextInput placeholder='Email' style={styles.textinput} placeholderTextColor='darkgrey'  name='email' value={this.state.email} onChangeText={event => this.validate(event)} type="text"/>
+         <TextInput placeholder='Password' style={styles.textinput} placeholderTextColor='darkgrey' name='password' value={this.state.password} onChangeText={event => this.handleChange(event)} type="password" secureTextEntry={true}/>
+         <TextInput error={this.state.error} value={this.state.error}/>
+         <TouchableOpacity style={styles.signupbtn} onPress={()=>this.verifedHandler()}>
+            <Text style={styles.signupbtntext}>Continue</Text>
+          </TouchableOpacity>
+          <Text style={styles.fineprint}>By signing up you acknowledge and have read our privacy policy and agree to our terms of service.</Text> 
+          <View style={styles.footer}>
+            <Text style={styles.footertxt}>Already have an account? 
+              <Text style={{fontWeight: '600'}}  onPress={()=> this.props.navigation.navigate('Login')} > Login</Text>
+            </Text>
+          </View> 
+        </SafeAreaView>
+    
+    )
+  }
+}
+
+
+ {/* <View style={{'flexDirection': 'row', 'borderRadius':10,'borderWidth':0.5,'overflow': 'hidden',}}> */}
+           
+            {/* <TouchableOpacity onPress={()=>this.sendEmail(
                     this.state.email,
                       'Libra Email Verification',
                     `${this.state.emailCode} is your Libra code. Just FYI, it'll expire soon`,
@@ -114,8 +145,8 @@ render() {
             value={this.state.emailCode}
             placeholder="Verification Code"
             keyboardType="numeric"
-            />
-        </View>
+            /> */}
+      
          {/* sendEmail(
     'user@domain.com',
        'We need your feedback',
@@ -123,19 +154,4 @@ render() {
  { cc: 'user@domain.com; user2@domain.com; userx@domain1.com' }
 ).then(() => {
     console.log('Your message was successfully sent!');
-}); */}
-         {/* <TouchableOpacity style={styles.signupbtn} onPress={()=>this.props.navigation.navigate('RegisterTwo')}>
-            <Text style={styles.signupbtntext}>Continue</Text>
-          </TouchableOpacity>
-          <Text style={styles.fineprint}>By signing up you acknowledge and have read our privacy policy and agree to our terms of service.</Text> */}
-        
-           <View style={styles.footer}>
-                <Text style={styles.footertxt}>Already have an account? 
-                  <Text style={{fontWeight: '600'}}  onPress={()=> this.props.navigation.navigate('Login')}> Login</Text>
-                </Text>
-              </View> 
-        </SafeAreaView>
-    
-    )
-  }
-}
+}); */}  
