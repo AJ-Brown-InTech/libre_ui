@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Linking } from "react-native";
 import styles from '../../styles/styles'
-import { Query, QueryCache } from '@tanstack/react-query';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import qs from 'qs';
 
-export default class RegisterOne extends Component {
+ export default class RegisterOne extends Component {
   constructor(props){
   super(props)
   this.state = {
@@ -46,35 +44,6 @@ handleChange = event => {
   }
 }
 
-async  sendEmail(to, subject, body, options = {}) {
-  this.setState({emailCode: Math.random()})
-  console.log("Generated email verifcation, 201")
-  const { cc, bcc } = options;
-
-  let url = `mailto:${to}`;
-
-  // Create email link query
-  const query = qs.stringify({
-      subject: subject,
-      body: body,
-      cc: cc,
-      bcc: bcc
-  });
-
-  if (query.length) {
-      url += `?${query}`;
-  }
-
-  // check if we can use this link
-  const canOpen = await Linking.canOpenURL(url);
-
-  if (!canOpen) {
-      throw new Error('Provided URL can not be handled');
-  }
-
-  return Linking.openURL(url);
-}
-
 navigationHandler(){
   if(this.state.email && this.state.password != null && this.state.error.length <= 0){
     this.props.navigation.navigate('RegisterTwo')
@@ -87,17 +56,16 @@ navigationHandler(){
 
 verifedHandler(){
   if (this.state.emailInput == true && this.state.passwordInput == true ){
-   this.props.navigation.navigate('RegisterTwo')
+    let userDetails = {email: this.state.email, password: this.state.password} 
+    console.log(this.props)
+  
+   this.props.navigation.navigate('RegisterTwo', {email: this.state.email, password:this.state.password})
   } else{
     this.setState({error: 'Error creating an account, try again'})
   }
 }
 
-
-
 render() {
-
- console.log(this.state)
     return (
         <SafeAreaView style={styles.container}>
          <Text style={styles.title}>Sign Up</Text>
@@ -114,44 +82,7 @@ render() {
             </Text>
           </View> 
         </SafeAreaView>
-    
+       
     )
   }
 }
-
-
- {/* <View style={{'flexDirection': 'row', 'borderRadius':10,'borderWidth':0.5,'overflow': 'hidden',}}> */}
-           
-            {/* <TouchableOpacity onPress={()=>this.sendEmail(
-                    this.state.email,
-                      'Libra Email Verification',
-                    `${this.state.emailCode} is your Libra code. Just FYI, it'll expire soon`,
-                  { cc: 'ajalantbrown@gmail.com;' }
-                  ).then(() => {
-                    console.log('Your message was successfully sent!');
-                  }).catch(err => console.log(err))}>
-            <Text style={{
-              'height': 40,
-              'padding':10,
-              'backgroundColor': '#83cc9a'
-            }}>Send Code</Text>
-            </TouchableOpacity>
-            <TextInput style={{
-              'height': 40,
-              'borderLeft':0.5,
-              'padding':10
-            }}
-            onChangeText={event=> console.log(event)}
-            value={this.state.emailCode}
-            placeholder="Verification Code"
-            keyboardType="numeric"
-            /> */}
-      
-         {/* sendEmail(
-    'user@domain.com',
-       'We need your feedback',
-    'UserName, we need 2 minutes of your time to fill this quick survey [link]',
- { cc: 'user@domain.com; user2@domain.com; userx@domain1.com' }
-).then(() => {
-    console.log('Your message was successfully sent!');
-}); */}  
